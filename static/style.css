@@ -1,0 +1,121 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  background-color: aqua;
+  font-family: "Courier New", Courier, monospace;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#sender {
+  display: flex;
+  flex-direction: row;
+}
+
+.sender-column {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  color: #ffff00;
+  text-shadow: 3px 3px #ff00ff;
+  font-family: Arial;
+  font-size: 40px;
+}
+
+input[type]:not([type="file"]):not([type="submit"]),
+textarea {
+  margin: 0px 5px 8px 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  box-shadow: none;
+  outline: none;
+  box-sizing: border-box;
+  border: 1px solid rgb(134, 134, 134);
+  caret-color: #ff00ff;
+}
+
+input[type="submit"] {
+  border-color: #ff0;
+  border-style: solid;
+  color: #ff0;
+  background: #f0f;
+  font-size: 16px;
+  font-family: Arial;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+input[type="submit"]:hover,
+.custom-file-input:hover {
+  background: rgb(224, 0, 224);
+}
+
+input[type="submit"]:active,
+.custom-file-input:hover {
+  background: rgb(194, 0, 194);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-input {
+  border: 2px solid #ff0;
+  color: #ff0;
+  background: #f0f;
+  font-size: 16px;
+  font-family: Arial;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 1px 4px 1px 4px;
+  margin-top: 13px;
+  display: inline-block;
+}
+
+form {
+  display: table;
+  margin: auto;
+}
+
+label,
+input[type]:not([type="file"]):not([type="submit"]) {
+  color: #ff0;
+  text-shadow: 1px 1px #f0f;
+}
+
+input[type]:not([type="file"]):not([type="submit"]):focus,
+textarea:focus {
+  border: 1px solid #f0f;
+}
+
+#info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 8px;
+  font-size: 11px;
+  text-align: right;
+}
+
+#info p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #ff0;
+  text-shadow: 1px 1px #f0f;
+}
+
+#info a,
+#info a:visited {
+  color: #ff0;
+  text-shadow: 1px 1px #f0f;
+}

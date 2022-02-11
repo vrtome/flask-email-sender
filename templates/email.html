@@ -1,0 +1,28 @@
+<html>
+   <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   </head>
+   <body>
+      <h2>Send an email with Flask</h2>
+      <form action = "http://localhost:5000/email" method = "post">
+         <div id="sender">
+            <span class="sender-column"><label for="sender">From: </label>
+            <input type = "email" name = "sender" /></span>
+            <span class="sender-column"><label for="password">Password: </label>
+            <input type = "password" name = "password" /></span>
+         </div>
+         <label for="recipient">To: </label><br>
+         <input type = "email" name = "recipient" /><br>
+         <label for="subject">Subject:</label><br>
+         <input type = "text" name = "subject" /><br>
+         <textarea name = "text"  rows="10" cols="50"></textarea><br>
+         <label for="upload-file" class="custom-file-input">You can attach a file</label><br>
+         <input type = "file" name = "upload" id="upload-file" /><br>
+         <input type = "submit" value = "Submit" />
+      </form>
+      <div id="info">
+         <p>By Vítor Rodrigues Tomé</p>
+         <p><a href="https://github.com/vitorr4">GitHub</a></p>
+      </div>
+   </body>
+</html>
