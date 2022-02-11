@@ -32,4 +32,5 @@ def email():
         return render_template('email.html')
 
 
-app.run()
+if __name__ == '__main__':
+    app.run(threaded=True, port=5000)
