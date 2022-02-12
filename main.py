@@ -28,11 +28,13 @@ def email():
         print(type(emailUpload))
         se.send_email(emailHead, emailBody, emailSender, emailRecipient,
                       emailPassword, emailUpload)
-        return redirect(url_for('response'))
+        redirect(url_for('response'))
+        return jsonify(result={"status": 200})
     else:
         emailHead = request.args.get('subject')
         emailBody = request.args.get('text')
-        return render_template('email.html')
+        render_template('email.html')
+        return jsonify(result={"status": 200})
 
 
 if __name__ == '__main__':
