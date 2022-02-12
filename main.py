@@ -19,7 +19,7 @@ def email():
     if request.method == 'POST':
         addr = request.remote_addr
         print("rawrr")
-        print(addr)
+        print(request.form)
         emailHead = request.form.get['subject']
         print(emailHead)
         emailBody = request.form.get['text']
