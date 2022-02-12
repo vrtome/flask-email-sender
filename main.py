@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 @app.route('/response')
 def response():
+    print("got to response")
     return render_template('response.html')
 
 
@@ -47,6 +48,7 @@ def email():
         print(type(emailUpload))
         se.send_email(emailHead, emailBody, emailSender, emailRecipient,
                       emailPassword, emailUpload)
+        print("got out of email")
         return redirect(url_for('response'))
     else:
         print("chwddd")
