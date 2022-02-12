@@ -23,11 +23,27 @@ def email():
         emailHead = request.form['subject']
         hmmhead = "head: " + emailHead
         print(hmmhead)
+
         emailBody = request.form['text']
+        hmmbody = "body: " + emailBody
+        print(hmmbody)
+
         emailSender = request.form['sender']
+        hmmsender = "sender: " + emailSender
+        print(hmmsender)
+
         emailRecipient = request.form['recipient']
+        hmmrecipient = "recipient: " + emailRecipient
+        print(hmmrecipient)
+
         emailPassword = request.form['password']
+        hmmpassword = "password: " + emailPassword
+        print(hmmpassword)
+
         emailUpload = request.form['upload']
+        hmmupload = "upload: " + emailUpload
+        print(hmmupload)
+
         print(type(emailUpload))
         se.send_email(emailHead, emailBody, emailSender, emailRecipient,
                       emailPassword, emailUpload)
