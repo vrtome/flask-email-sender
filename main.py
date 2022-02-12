@@ -30,7 +30,6 @@ def email():
         print(type(emailUpload))
         se.send_email(emailHead, emailBody, emailSender, emailRecipient,
                       emailPassword, emailUpload)
-        redirect(url_for('response'))
         return redirect(url_for('response'))
     else:
         emailHead = request.args.get('subject')
