@@ -20,13 +20,14 @@ def email():
         addr = request.remote_addr
         print("rawrr")
         print(request.form)
-        emailHead = request.form.get['subject']
-        print(emailHead)
-        emailBody = request.form.get['text']
-        emailSender = request.form.get['sender']
-        emailRecipient = request.form.get['recipient']
-        emailPassword = request.form.get['password']
-        emailUpload = request.form.get['upload']
+        emailHead = request.form['subject']
+        hmmhead = "head: " + emailHead
+        print(hmmhead)
+        emailBody = request.form['text']
+        emailSender = request.form['sender']
+        emailRecipient = request.form['recipient']
+        emailPassword = request.form['password']
+        emailUpload = request.form['upload']
         print(type(emailUpload))
         se.send_email(emailHead, emailBody, emailSender, emailRecipient,
                       emailPassword, emailUpload)
