@@ -1,3 +1,4 @@
+from distutils.log import debug
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -16,12 +17,14 @@ def response():
 @app.route('/email', methods=['POST', 'GET'])
 def email():
     if request.method == 'POST':
-        emailHead = request.form['subject']
+        addr = request.remote_addr
+        print(addr)
+        emailHead = request.form.get['subject']
         emailBody = request.form['text']
-        emailSender = request.form['sender']
-        emailRecipient = request.form['recipient']
-        emailPassword = request.form['password']
-        emailUpload = request.form['upload']
+        emailSender = request.form.get['sender']
+        emailRecipient = request.form.get['recipient']
+        emailPassword = request.form.get['password']
+        emailUpload = request.form.get['upload']
         print(type(emailUpload))
         se.send_email(emailHead, emailBody, emailSender, emailRecipient,
                       emailPassword, emailUpload)
@@ -33,4 +36,4 @@ def email():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(debug=True)
