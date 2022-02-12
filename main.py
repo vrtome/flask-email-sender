@@ -2,7 +2,7 @@ from distutils.log import debug
 from flask import Flask
 from flask import render_template
 from flask import request
-from flask import redirect, url_for
+from flask import redirect, url_for, jsonify
 import send_email as se
 
 app = Flask(__name__)
