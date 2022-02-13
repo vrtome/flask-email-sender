@@ -8,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 
 def send_email(subject, body, sender, recipient, senderPassword, file):
     port = 465  #SSL
-    smtp_server = "smtp.flask-email-sender-2022.herokuapp.com"
+    smtp_server = "smtp.gmail.com"
     sender_email = sender
     receiver_email = recipient
     password = senderPassword  #input("Type your password and press enter: ")
@@ -45,10 +45,12 @@ def send_email(subject, body, sender, recipient, senderPassword, file):
 
     text = message.as_string()
 
+    print("Got to the final part.")
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, text)
+    print("Finalized")
 
 
 def main():
