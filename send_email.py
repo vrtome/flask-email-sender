@@ -28,7 +28,8 @@ def send_email(subject, body, sender, recipient, senderPassword, file):
 
     message.attach(part1)
     message.attach(part2)
-    print(f'File path for file: {os.path.realpath(filename)}')
+    path = os.path.realpath(filename)
+    print(f'File path for file: {path}')
     filename = file
     if filename != "":
         with open(os.path.realpath(filename), "rb") as attachment:
