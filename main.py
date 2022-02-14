@@ -54,7 +54,6 @@ def email():
         hmmpassword = "password: " + emailPassword
         print(hmmpassword)
 
-        print(app.root_path)
         # check if the post request has the file part
         if 'upload' not in request.files:
             flash('No file part')
@@ -70,6 +69,7 @@ def email():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             #return redirect(url_for('download_file', name=filename))
+        print(file)
         emailUpload = filename  #request.form['upload']
         hmmupload = "upload: " + emailUpload
         print(hmmupload)
