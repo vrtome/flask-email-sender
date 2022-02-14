@@ -70,7 +70,9 @@ def email():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             #return redirect(url_for('download_file', name=filename))
         print(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        emailUpload = filename  #request.form['upload']
+        emailUpload = os.path.join(
+            app.config['UPLOAD_FOLDER'],
+            filename)  #filename  #request.form['upload']
         hmmupload = "upload: " + emailUpload
         print(hmmupload)
 
