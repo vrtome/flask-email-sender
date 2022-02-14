@@ -54,6 +54,7 @@ def email():
         hmmpassword = "password: " + emailPassword
         print(hmmpassword)
 
+        print(app.root_path)
         # check if the post request has the file part
         if 'upload' not in request.files:
             flash('No file part')
