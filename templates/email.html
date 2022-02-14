@@ -4,7 +4,7 @@
    </head>
    <body>
       <h2>Send an email with Flask</h2>
-      <form action = "{{ url_for('email') }}" method = "post">
+      <form action = "{{ url_for('email') }}" method = "post" enctype="multipart/form-data">
          <div id="sender">
             <span class="sender-column"><label for="sender">From: </label>
             <input type = "email" name = "sender" /></span>
