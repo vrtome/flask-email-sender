@@ -4,12 +4,19 @@ from flask import render_template
 from flask import request
 from flask import redirect, url_for, jsonify, flash
 import send_email as se
+import os
+from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = '/uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @app.route('/response')

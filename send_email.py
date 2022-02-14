@@ -4,7 +4,6 @@ from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import os
 
 
 def send_email(subject, body, sender, recipient, senderPassword, file):
@@ -29,10 +28,10 @@ def send_email(subject, body, sender, recipient, senderPassword, file):
     message.attach(part1)
     message.attach(part2)
     filename = file
-    path = os.path.realpath(filename)
+    path = filename
     print(f'File path for file: {path}')
     if filename != "":
-        with open(os.path.realpath(filename), "rb") as attachment:
+        with open(filename, "rb") as attachment:
             part3 = MIMEBase("application", "octet-stream")
             part3.set_payload(attachment.read())
 
