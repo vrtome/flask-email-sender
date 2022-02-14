@@ -55,11 +55,11 @@ def email():
         print(hmmpassword)
 
         # check if the post request has the file part
-        if 'file' not in request.files:
+        if 'upload' not in request.files:
             flash('No file part')
             #return redirect(request.url)
-        file = request.files['file']
-        print(file)
+        file = request.files['upload']
+
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
         if file.filename == '':
