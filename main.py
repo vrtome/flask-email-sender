@@ -1,8 +1,7 @@
-from distutils.log import debug
 from flask import Flask
 from flask import render_template
 from flask import request
-from flask import redirect, url_for, jsonify, flash
+from flask import redirect, url_for
 import send_email as se
 import os
 from werkzeug.utils import secure_filename
@@ -54,17 +53,7 @@ def email():
         hmmpassword = "password: " + emailPassword
         print(hmmpassword)
 
-        # check if the post request has the file part
-        if 'upload' not in request.files:
-            flash('No file part')
-            #return redirect(request.url)
         file = request.files['upload']
-
-        # If the user does not select a file, the browser submits an
-        # empty file without a filename.
-        if file.filename == '':
-            flash('No selected file')
-            #return redirect(request.url)
 
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)

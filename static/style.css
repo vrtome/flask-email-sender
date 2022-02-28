@@ -87,8 +87,7 @@ form {
   margin: auto;
 }
 
-label,
-input[type]:not([type="file"]):not([type="submit"]) {
+label {
   color: #ff0;
   text-shadow: 1px 1px #f0f;
 }
